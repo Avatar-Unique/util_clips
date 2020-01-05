@@ -1,7 +1,6 @@
-bool isInPolygen(const float& x, const float& y, const [&float] polygen_x[], const[&float] polygen_y)
+bool isInPolygen(const float& x, const float& y, const [&float] polygen_x[], const[&float] polygen_y, int n_vert)
 {
-	int n = sizeof(polygen_x) / sizeof(float);
-	if (n < 3)
+	if (n_vert < 3)
 	{
 		return false;
 	}
@@ -9,7 +8,7 @@ bool isInPolygen(const float& x, const float& y, const [&float] polygen_x[], con
 	float x_max = polygen_x[0];
 	float y_min = polygen_y[0];
 	float y_max = polygen_y[0];
-	for (int i = 1; i < n; i++)
+	for (int i = 1; i < n_vert; i++)
 	{
 		if (x_min > polygen_x[i])
 		{
